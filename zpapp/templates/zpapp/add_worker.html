@@ -1,0 +1,22 @@
+{% extends 'zpapp/base.html' %}
+
+{% block title %}
+Добавить работника
+{% endblock%}
+
+{% block content %}
+    <h1>Добавить работника</h1>
+    <div >
+        <form method="POST" >
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="fieldWrapper">
+                    <br>{{ field.label_tag }}
+                    <br>{{ field}}
+                </div>
+            {% endfor %}
+            <br><input type="submit" class="btn btn-danger" value="Добавить">
+        </form>
+    </div>
+
+{% endblock %}

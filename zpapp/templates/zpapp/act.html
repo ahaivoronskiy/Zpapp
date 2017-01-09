@@ -1,0 +1,285 @@
+<!DOCTYPE HTML >
+<html>
+<head>
+
+	<style type="text/css">
+	<!--
+		@page { size: 8.5in 11in; margin: 0.79in }
+		P { margin-bottom: 0.08in; direction: ltr; widows: 2; orphans: 2 }
+		TD P { margin-bottom: 0in; direction: ltr; widows: 2; orphans: 2 }
+	-->
+	</style>
+</head>
+<body lang="uk-UA" dir="LTR">
+{% for salary in salary %}
+
+{% for worker in workers %}
+
+<center>
+
+<b><p>АКТ ЗДАЧІ-ПРИЙМАННЯ РОБІТ (НАДАННЯ ПОСЛУГ) № {{ worker.date_contract|date:"my" }}{{ worker.contract|slice:"-2:" }}</p>
+<p>від {{ salary.date|date:"d.m.Y" }}.</p>
+ </b>
+</center>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;Ми, що нижче підписалися, ФОП Смірнов Володимир Віталійович, з одного боку, і ФОП {{ worker.surname }} {{ worker.name }} {{ worker.patronymic }}, з
+іншого боку, які надалі по тексту іменуються разом як «Сторони», склали цей Акт здачі-приймання робіт (надання
+послуг) № {{ worker.date_contract|date:"my" }}{{ worker.contract|slice:"-2:" }} від {{ salary.date|date:"d.m.Y" }}.(надалі по тексту іменується як «Акт» до Договору {{ worker.contract }} від {{ worker.date_contract|date:"d.m.Y" }} про наступне:</p>
+
+<p align="justify">	1. ФОП {{ worker.surname }} {{ worker.name }} {{ worker.patronymic }} виконав роботи (надав послуги), що передбачені умовами
+Договору {{ worker.contract }} від {{ worker.date_contract|date:"d.m.Y" }}, а саме:</p>
+
+<table width="665" cellpadding="4" cellspacing="0">
+	<tr>
+		<td width="24" bgcolor="#cfe7f5" style="border-top: 1px solid #000001; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+			<b><p align="ccenter">№</p></b>
+		</td>
+		<td width="306" bgcolor="#cfe7f5" style="border-top: 1px solid #000001; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+			<p align="center"><b>Найменування</b></p>
+		</td>
+		<td width="80" bgcolor="#cfe7f5" style="border-top: 1px solid #000001; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+			<p align="center"><b>Кількість</b></p>
+		</td>
+		<td width="70" bgcolor="#cfe7f5" style="border-top: 1px solid #000001; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+			<p align="center"><b>Од. вим.</b></p>
+		</td>
+		<td width="72" bgcolor="#cfe7f5" style="border-top: 1px solid #000001; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+			<p align="center"><b>Ціна без ПДВ</b></p>
+		</td>
+		<td width="63" bgcolor="#cfe7f5" style="border: 1px solid #000001; padding: 0.04in">
+			<p align="center"><b>Сума без ПДВ</b></p>
+		</td>
+	</tr>
+	<tr valign="top" >
+		<td width="24" style="border-top: none; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+			<p align="center">1</p>
+		</td>
+		<td width="306" style="border-top: none; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+			<p align="left">Співпраця при створенні програмного
+			забезпечення</p>
+		</td>
+		<td  width="80" style="border-top: none; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+			<p align="center">1</p>
+		</td>
+		<td width="70" style="border-top: none; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+			<p align="center">міс.</p>
+		</td>
+		<td width="72" style="border-top: none; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+			<p align="center"><b>{{ salary.salary_uah }},00</b></p>
+		</td>
+		<td width="63" style="border-top: none; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: 1px solid #000001; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+			<p align="center"><b>{{ salary.salary_uah }},00</b></p>
+		</td>
+	</tr>
+
+</table>
+<p style="margin-bottom: 0in; display: none"><br>
+</p>
+<table width="293" cellpadding="4" cellspacing="0" align="right">
+
+	<tr valign="top">
+		<td width="115" bgcolor="#ffffff" style="border: none; padding: 0in">
+			<p><b>Разом:</b></p>
+		</td>
+		<td width="162" style="border: none; padding: 0in">
+			<p align="right"><b>{{ salary.salary_uah }},00</b>
+			</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="115" style="border: none; padding: 0in">
+			<p><b>Сума ПДВ:</b></p>
+		</td>
+		<td width="162" style="border: none; padding: 0in">
+			<p align="right"><B>0,00</B></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="115" style="border: none; padding: 0in">
+			<p><b>Усього з ПДВ:</b></p>
+		</td>
+		<td width="162" style="border: none; padding: 0in">
+			<p align="right"><b>{{ salary.salary_uah }},00</b>
+			</p>
+		</td>
+	</tr>
+</table>
+<p align="justify" style="margin-left: 4.52in; margin-bottom: 0in"><br>
+</p>
+<br>
+<br>
+<br>
+<br>
+<p align="justify" style="margin-bottom: 0in">2. ФОП Смірнов Володимир Віталійович оплатив ФОП {{ worker.surname }} {{ worker.name }} {{ worker.patronymic }}
+    вартість робіт (послуг) у розмірі {{ salary.salary_uah }}  гривень 00 копійок, у т.ч. ПДВ: 0 гривень 00 копійок.</p>
+
+<p align="justify" style="margin-bottom: 0in">	3. Сторони зауважень та скарг один до одного, стосовно виконань умов
+Договору {{ worker.contract}} від {{ worker.date_contract|date:"d.m.Y" }}, не мають.</p>
+
+<P align="justify" style="margin-bottom: 0in">	4. Місце складання Акту — Україна, м.Суми.</P>
+
+<table width="667" cellpadding="7" cellspacing="0">
+
+	<td valign="top">
+		<td width="317" style="border: none; padding: 0in">
+			<p align="center" style="margin-bottom: 0in"><br>
+			</p>
+			<p align="center" style="margin-bottom: 0in"><b>ВИКОНАВЕЦЬ</b></p>
+			<p align="center" style="margin-bottom: 0in"><br></p>
+			<p style="margin-bottom: 0in">ФОП {{ worker.surname }} {{ worker.name }} {{ worker.patronymic }}</p>
+			<p style="margin-bottom: 0in">ІПН: {{ worker.ip_number }}</p>
+			<p style="margin-bottom: 0in">{{ worker.index }},&nbsp{{ worker.address }},&nbsp{{ worker.tel }}</p>
+			<p style="margin-bottom: 0in">р/р {{ worker.score_number }}</p>
+			<p style="margin-bottom: 0in">у банку Приватбанк</p>
+			<p style="margin-bottom: 0in">МФО {{ worker.mfo }}</p>
+			<p style="margin-bottom: 0in">Є платником єдиного податку</p>
+			<p style="margin-bottom: 0in">______________________ {{ worker.name| first }}. {{ worker.patronymic| first }}. {{ worker.surname}}</p>     <p style="margin-left: -0in; margin-right: -0in; text-indent: 0.33in">М.П.</p>
+		</td>
+
+		<td width="20"></td>
+
+		<td width="317" style="border: none; padding: 0in">
+			<p align="center" style="margin-bottom: 0in"><br></p>
+			<p align="center" styl="margin-bottom: 0in"><b>ЗАМОВНИК</b></p>
+			<p style="margin-bottom: 0in"><br></p>
+			<p style="margin-bottom: 0in">ФОП Смірнов Володимир Віталійович</p>
+			<p style="margin-bottom: 0in">ІПН: 3252419411</p>
+			<p style="margin-bottom: 0in">40021, м. Суми, вул.Герасима Кондратьєва, буд. 160/6, кв. 4,
+			тел. +380 (99) 7905796</p>
+			<p style="margin-bottom: 0in">р/р 26002055012234</p>
+			<p style="margin-bottom: 0in">у банку Приватбанк</p>
+			<p style="margin-bottom: 0in">МФО 337546</p>
+			<p style="margin-bottom: 0in">Є платником єдиного податку</p>
+			<p style="margin-bottom: 0in">______________________В.В.Смірнов</p>
+			<p style="margin-left: -0in; margin-right: -0in; text-indent: 0.33in">М.П.</p>
+		</td>
+	</td>
+
+</table>
+<br>
+<br>
+<p align="center" size=4><b>РАХУНОК НА ОПЛАТУ № ___ </b></p>
+<p align="center" size=4><b>від {{ salary.date|date:"d.m.Y" }}р.</b></p>
+<p style="margin-bottom: 0in"><br></p>
+
+<table width="665" cellpadding="4" cellspacing="0">
+	<tr valign="top">
+		<td width="142" style="border: none; padding: 0in">
+			<p><b>Постачальник:</b></p>
+		</td>
+		<td width="507" style="border: none; padding: 0in">
+			<p style="margin-bottom: 0in">ФОП {{ worker.surname }} {{ worker.name }} {{ worker.patronymic }}</p>
+			<p style="margin-bottom: 0in">ІПН: {{ worker.ip_number }}</p>
+			<p style="margin-bottom: 0in">{{ worker.index }},&nbsp{{ worker.address }},&nbsp{{ worker.tel }}</p>
+			<p style="margin-bottom: 0in">р/р {{ worker.score_number }}</p>
+			<p style="margin-bottom: 0in">у банку Приватбанк</p>
+			<p style="margin-bottom: 0in">МФО {{ worker.mfo }}</p>
+			<p style="margin-bottom: 0in">Є платником єдиного податку</p>
+			<p style="margin-bottom: 0in">______________________ {{ worker.name| first }}. {{ worker.patronymic| first }}. {{ worker.surname}}</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="142" style="border: none; padding: 0in">
+			<p><b>Платник:</b></p>
+		</td>
+		<td width="507" style="border: none; padding: 0in">
+			<p>ФОП Смірнов Володимир Віталійович</p>
+			<p>ІПН: 3252419411</p>
+			<p>40021, м. Суми, вул.Герасима Кондратьєва, буд. 160/6, кв. 4, тел. +380 (99) 7905796</p>
+			<p>р/р 26002055012234</p>
+			<p>у банку Приватбанк</p>
+			<p>МФО 337546</p>
+			<p>Є платником єдиного податку</p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="142" style="border: none; padding: 0in">
+			<p><b>Договір:</b></p>
+		</td>
+		<td width="507" style="border: none; padding: 0in">
+			<p>{{ worker.contract}} від {{ worker.date_contract|date:"d.m.Y" }}</p>
+		</td>
+	</tr>
+</table>
+<br>
+<table width="665"  cellpadding="4" cellspacing="0">
+	<tr>
+		<td width="24" bgcolor="#cfe7f5" style="border-top: 1px solid #000001; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+			<p align="center">№</p>
+		</td>
+		<td width="306" bgcolor="#cfe7f5" style="border-top: 1px solid #000001; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+			<p align="center"><b>Найменування</b></p>
+		</td>
+		<td width="80" bgcolor="#cfe7f5" style="border-top: 1px solid #000001; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+			<p align="center"><b>Кількість</b></p>
+		</td>
+		<td width="70" bgcolor="#cfe7f5" style="border-top: 1px solid #000001; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+			<p align="center"><b>Од. вим.</b></p>
+		</td>
+		<td width="72" bgcolor="#cfe7f5" style="border-top: 1px solid #000001; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0.04in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+			<p align="center"><b>Ціна без ПДВ</b></p>
+		</td>
+		<td width="63" bgcolor="#cfe7f5" style="border: 1px solid #000001; padding: 0.04in">
+			<p align="center"><b>Сума без ПДВ</b></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="24" style="border-top: none; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+			<p align="center">1</p>
+		</td>
+		<td width="306" style="border-top: none; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+			<p>Співпраця при створенні програмногo забезпечення</p>
+		</td>
+		<td width="80" style="border-top: none; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+			<p align="center">1</p>
+		</td>
+		<td width="70" style="border-top: none; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+			<p align="center">міс</p>
+		</td>
+		<td width="72" style="border-top: none; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: none; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0in">
+			<p align="center">{{ salary.salary_uah }},00</p>
+		</td>
+		<td width="63" style="border-top: none; border-bottom: 1px solid #000001; border-left: 1px solid #000001; border-right: 1px solid #000001; padding-top: 0in; padding-bottom: 0.04in; padding-left: 0.04in; padding-right: 0.04in">
+			<p align="center">{{ salary.salary_uah }},00</p>
+		</td>
+	</tr>
+</table>
+<table width="293"  cellpadding="4"  cellspacing="0">
+	<tr valign="top">
+		<td width="105">
+			<p><b>Разом:</b></p>
+		</td>
+		<td width="172" >
+			<p align="right"><b>{{ salary.salary_uah }},00</b></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="105">
+			<p><b>Сума ПДВ:</b></p>
+		</td>
+		<td width="172">
+			<p align="right"><b>0,00</b></p>
+		</td>
+	</tr>
+	<tr valign="top">
+		<td width="105">
+			<p><b>Усього з ПДВ:</b></p>
+		</td>
+		<td width="172">
+			<p align="right"><b>{{ salary.salary_uah }},00</b></p>
+		</td>
+	</tr>
+</table>
+<p align="justify">	Загальна сума, що підлягає оплаті складає <B>{{ salary.salary_uah }}</B> гривень 00 копійок, у т.ч.ПДВ:
+	нуль гривень 00 копійок.</p>
+
+<p align="right" ><B>Виписав(ла):___________________ {{ worker.name| first }}. {{ worker.patronymic| first }}. {{ worker.surname}}</B></p>
+<p align="right">М.П.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+
+{% endfor %}
+{% endfor %}
+</body>
+</html>
