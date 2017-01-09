@@ -8,11 +8,11 @@ class Worker (models.Model):
     patronymic = models.CharField ('Patronymic', max_length=30)
     address = models.CharField ('Address', max_length=100)
     index = models.CharField ('Index', max_length=6)
-    tel = models.CharField ('Phone number',  max_length=15)
-    ip_number = models.CharField ('ИНН',  max_length=12 )
-    score_number = models.CharField ('Расчетный счет',  max_length=14)
-    mfo = models.CharField ('МФО', max_length=6 )
-    contract = models.CharField ('Contract №',  max_length=30)
+    tel = models.CharField ('Phone number', unique=True,  max_length=15)
+    ip_number = models.CharField ('ID number', unique=True,  max_length=12 )
+    score_number = models.CharField ('Score number', unique=True,  max_length=14)
+    mfo = models.CharField ('MFO', max_length=6 )
+    contract = models.CharField ('Contract №', unique=True, max_length=30)
     date_contract = models.DateTimeField('Contract Date', default= datetime.datetime.utcnow())
 
     def __str__(self):
