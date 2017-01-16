@@ -10,19 +10,20 @@ class Worker (models.Model):
     index = models.CharField ('Index', max_length=6)
     tel = models.CharField ('Phone number', unique=True,  max_length=15)
     ip_number = models.CharField ('ID number', unique=True,  max_length=12 )
-    score_number = models.CharField ('Score number', unique=True,  max_length=14)
+    score_number = models.CharField ('Account number', unique=True,  max_length=14)
     mfo = models.CharField ('MFO', max_length=6 )
-    contract = models.CharField ('Contract №', unique=True, max_length=30)
-    date_contract = models.DateTimeField('Contract Date', default= datetime.datetime.utcnow())
+    contract = models.CharField ('Contract number', unique=True, max_length=30)
+    date_contract = models.DateField('Contract Date', default= datetime.datetime.utcnow())
+    service = models.CharField ('Service', max_length=500)
 
     def __str__(self):
-        return self.surname
+        return '{0} {1} {2}'.format(self.surname, self.name, self.patronymic)
 
 
 class Salary (models.Model):
     worker = models.ForeignKey(Worker)
     salary_uah = models.IntegerField ('Salary')
-    date = models.DateTimeField('Date', default=datetime.datetime.utcnow())
+    date = models.DateField('Date', default=datetime.datetime.utcnow())
 
     def __str__(self):
-        return self.worker.surname
+        return '{0} {1} {2}'.format(self.worker.surname, self.worker.name, self.worker.patronymic)

@@ -26,7 +26,7 @@ SECRET_KEY = 'csxsnwlh$txc0^myqf$+f(!=&w_2kk=x_o7=+3_-d-=f034k**'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.88.151']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'zpapp',
 ]
 
